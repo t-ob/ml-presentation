@@ -35,9 +35,8 @@ if __name__ == "__main__":
             score = tensors[idx] @ query
             scores.append(score)
 
-        argmaxes = sorted(range(N_TENSORS), key=lambda idx: scores[idx], reverse=True)[
-            :3
-        ]
+        argmaxes = sorted(range(N_TENSORS), key=lambda idx: scores[idx], reverse=True)
+        argmaxes = argmaxes[:3]
         best_for_loop = [documents[idx] for idx in argmaxes]
 
     end = time.time()
